@@ -1,7 +1,7 @@
 package edu.todo.vch.timepixels;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import edu.todo.vch.timepixels.model.FlickrClient;
 
@@ -13,7 +13,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         FlickrClient client = new FlickrClient();
-        String testUrl = client.createSigningRequest();
-        System.out.println(testUrl);
+
+        String testUrl = null;
+
+
+
+            testUrl = client.generateHMACSha1();
+
+
+
+        System.out.println("-----------------> 1 " + testUrl);
     }
 }
