@@ -43,8 +43,8 @@ public class FlickrAutentificationClient {
         return UUID.randomUUID().toString().replace("-", "");
     }
 
-    private String createSigningRequest() throws UnsupportedEncodingException {
-        return createSignedURI(createURIPath(), createURIParameters().toString());
+    public String createSigningRequest() throws UnsupportedEncodingException {
+        return createSignedURI(createURIPath(), createURIParameters().build().toString());
     }
 
     private String createURIPath() {
@@ -58,34 +58,33 @@ public class FlickrAutentificationClient {
         return uriPath.build().toString();
     }
 
-    private StringBuilder createURIParameters() throws UnsupportedEncodingException {
-        StringBuilder uriParamBuilder = new StringBuilder();
-        uriParamBuilder.append("oauth_callback").append("=").append(encodeString("http://www.vhcdev.edu/oauth/test")).append("&");
-        uriParamBuilder.append("oauth_consumer_key").append("=").append(CONSUMER_API_KEY).append("&");
-        uriParamBuilder.append("oauth_nonce").append("=").append(oauthNonce).append("&");
-        uriParamBuilder.append("oauth_signature_method").append("=").append("HMAC-SHA1").append("&");
-        uriParamBuilder.append("oauth_timestamp").append("=").append(timeStamp).append("&");
-        uriParamBuilder.append("oauth_version").append("=").append("1.0");
+    private Uri.Builder createURIParameters() throws UnsupportedEncodingException {
+        Uri.Builder uriParam = new Uri.Builder()
+                .appendQueryParameter("oauth_callback", "http://www.vhcdev.edu/oauth/test")
+                .appendQueryParameter("oauth_consumer_key", CONSUMER_API_KEY)
+                .appendQueryParameter("oauth_nonce", oauthNonce)
+                .appendQueryParameter("oauth_signature_method", "HMAC-SHA1")
+                .appendQueryParameter("oauth_timestamp", timeStamp)
+                .appendQueryParameter("oauth_version", "1.0");
 
-        return uriParamBuilder;
+        return uriParam;
     }
 
     private String encodeString(String data) throws UnsupportedEncodingException {
         return URLEncoder.encode(data, ISO_8859_1);
     }
 
-    private String createURIParametersForRequestToken(StringBuilder data, String oauthSignature) throws UnsupportedEncodingException {
-        data.append("&").append("oauth_signature").append("=").append(encodeString(oauthSignature));
-
-        return data.toString();
+    private String createURIParametersForRequestToken(Uri.Builder data, String oauthSignature) throws UnsupportedEncodingException {
+        data.appendQueryParameter("oauth_signature", oauthSignature);
+        return data.build().toString();
     }
 
     private String createSignedURI(String uripath, String uriParameters) throws UnsupportedEncodingException {
-        return "GET" + "&" + encodeString(uripath) + "&" + encodeString(uriParameters);
+        return "GET" + "&" + encodeString(uripath) + "&" + encodeString(uriParameters.replace("?", ""));
     }
 
     private String createURIForRequestToken(String path, String parameters) {
-        return path + "?" + parameters;
+        return path + parameters;
     }
 
     public String createTokenRequest() throws UnsupportedEncodingException {
