@@ -31,7 +31,6 @@ public class FlickrAutentificationClient {
     private static final String ISO_8859_1 = "ISO-8859-1";
     private static final String HMAC_SHA1 = "HmacSHA1";
 
-
     private static final class Oauth {
         private static final String CALLBACK = "oauth_callback";
         private static final String CONSUMER_KEY = "oauth_consumer_key";
@@ -50,7 +49,6 @@ public class FlickrAutentificationClient {
         private static final String REQUEST_TOKEN = "request_token";
     }
 
-
     private static final class OauthParams {
         private static final String VERSION = "1.0";
         private static final String CALLBACK_ADDRESS = "http://www.vhcdev.edu/oauth/test";
@@ -58,12 +56,10 @@ public class FlickrAutentificationClient {
 
     }
 
-
     private String tokenSecret;
     private String oauthNonce;
     private String timeStamp;
     private String token;
-
 
     public FlickrAutentificationClient() {
         this.oauthNonce = generateOauthNonce();
@@ -152,7 +148,6 @@ public class FlickrAutentificationClient {
         return new String(Base64.encodeToString(digest, Base64.NO_WRAP));
     }
 
-
     public void autentificate() {
         try {
             getRequestToken(createTokenRequest());
@@ -160,6 +155,7 @@ public class FlickrAutentificationClient {
             e.printStackTrace();
         }
     }
+
     private void getRequestToken(String uri) {
         HttpURLConnection urlConnection  = null;
         try {

@@ -12,20 +12,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final FlickrAutentificationClient client = new FlickrAutentificationClient();
+        startRequestForTokens();
 
-        String testUrl = null;
+    }
 
-
-        Thread t = new Thread(new Runnable() {
+    private void startRequestForTokens(){
+        Thread startRequest = new Thread(new Runnable() {
             @Override
             public void run() {
-                client.autentificate();
+                FlickrAutentificationClient autentificationClient = new FlickrAutentificationClient();
+                autentificationClient.autentificate();
             }
         });
-
-        t.start();
-
-
+        startRequest.start();
     }
 }
