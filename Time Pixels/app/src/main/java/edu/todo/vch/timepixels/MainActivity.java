@@ -3,7 +3,7 @@ package edu.todo.vch.timepixels;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import edu.todo.vch.timepixels.model.FlickrAutentificationClient;
+import edu.todo.vch.timepixels.model.FlickrAuthenticateClient;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
         Thread startRequest = new Thread(new Runnable() {
             @Override
             public void run() {
-                FlickrAutentificationClient autentificationClient = new FlickrAutentificationClient();
-                autentificationClient.autentificate();
+                FlickrAuthenticateClient autentificationClient = new FlickrAuthenticateClient();
+                autentificationClient.authenticate();
             }
         });
         startRequest.start();
