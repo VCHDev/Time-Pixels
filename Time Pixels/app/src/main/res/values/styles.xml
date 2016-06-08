@@ -7,6 +7,10 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:buttonStyle">@style/ButtonStyleNoCaps</item>
+        <item name="buttonStyle">@style/ButtonStyleNoCaps</item>
+        <!--Make the status bar invisible and let the app to have full screen-->
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
     </style>
 
     <style name="ButtonStyleNoCaps" parent="Widget.AppCompat.Button">

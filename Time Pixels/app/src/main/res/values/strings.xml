@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Time Pixels</string>
+    
+    <string name="authenticate.info.part1">10000GB for free\nSave all your photos and videos in one place with\nAuto-Uploadr.</string>
+    <string name="authenticate.info.part2">Keep your memories safe\nYour uploaded photos stay private until you\nchoose to share them.</string>
+    <string name="authenticate.info.part3">Organization simplified\nSearch, edit, and organize in seconds.</string>
+    <string name="authenticate.info.part4">Sharing made easy\nShare with friends, family, and the world.</string>
+
+    <string-array name="authenticateInfoArray">
+        <item>@string/authenticate.info.part1</item>
+        <item>@string/authenticate.info.part2</item>
+        <item>@string/authenticate.info.part3</item>
+        <item>@string/authenticate.info.part4</item>
+    </string-array>
 </resources>

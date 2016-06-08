@@ -1,4 +1,4 @@
-package edu.todo.vch.timepixels.model;
+package edu.todo.vch.timepixels.authenticate.model;
 
 /**
  * Created by Valentin on 30/05/16.
@@ -27,7 +27,7 @@ import javax.crypto.spec.SecretKeySpec;
 /**
  * Flickr Authenticate Client for network requests
  */
-public class FlickrAuthenticateClient {
+public class AuthenticateClient {
     private static final String CONSUMER_API_KEY = "789f557cecdbf7438a540d518485589b";
     private static final String CONSUMER_API_SECRET = "af54f2a63f266a8e";
 
@@ -66,7 +66,7 @@ public class FlickrAuthenticateClient {
 
     private String token;
 
-    public FlickrAuthenticateClient() {
+    public AuthenticateClient() {
         this.oauthNonce = generateOauthNonce();
         this.timeStamp = generateTimeStamp();
         tokenSecret = "";
@@ -123,7 +123,7 @@ public class FlickrAuthenticateClient {
         extractTokensFromArrayToKeyValueMap(tokens, tokenMap);
         extractTokenAndSecretTokenFromMap(tokenMap);
 
-        Log.i(FlickrAuthenticateClient.class.getSimpleName(), "token_secret = " + tokenSecret + " / token = " + token);
+        Log.i(AuthenticateClient.class.getSimpleName(), "token_secret = " + tokenSecret + " / token = " + token);
     }
 
     private void extractTokensFromArrayToKeyValueMap(String[] tokens, Map<String, String> tokenMap) {
