@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background"
         android:orientation="vertical"
-        android:weightSum="10">
-
+        android:weightSum="10"
+        >
 
         <android.support.v4.view.ViewPager
             android:id="@+id/info_pager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="10" />
-
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
             <Button
-                android:id="@+id/signin_button"
+                android:id="@+id/sign_in_button"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:background="@color/colorPrimaryDark"
-                android:stateListAnimator="@null"
-                android:text="Sign In"
-                android:textColor="@color/textIcons" />
+                android:text="@string/authenticate.fragment.sign_in"
+                android:textColor="@color/textIcons"
+                />
 
             <Button
                 android:id="@+id/join_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/textIcons"
-                android:stateListAnimator="@null"
-                android:text="Join Time Pixel"
-                android:textColor="@color/colorPrimaryDark" />
+                android:text="@string/authenticate.join.time.pixel"
+                android:textColor="@color/colorPrimaryDark"
+                />
 
         </LinearLayout>
     </LinearLayout>
@@ -50,10 +50,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Time Pixel"
+        android:text="@string/authenticate.time_pixel"
         android:layout_marginBottom="100dp"
         android:textColor="@color/textIcons"
         android:textSize="50sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        />
 
 </FrameLayout>

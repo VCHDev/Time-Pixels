@@ -10,7 +10,7 @@ import edu.todo.vch.timepixels.authenticate.view.AuthenticateInfoFragment;
  * Authenticate Info Pager Adapter used to inflate {@link  edu.todo.vch.timepixels.authenticate.view.AuthenticateInfoFragment}
  */
 public class AuthenticateInfoPageAdapter extends FragmentPagerAdapter {
-    private String[] infoData;
+    private final String[] infoData;
 
     public AuthenticateInfoPageAdapter(FragmentManager fragmentManager, String[] infoData) {
         super(fragmentManager);

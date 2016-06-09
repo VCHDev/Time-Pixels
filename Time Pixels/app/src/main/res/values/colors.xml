@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--materia design collors-->
+    <!--Base colors -->
     <!--<color name="colorPrimary">#009688</color>-->
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#00796B</color>
@@ -11,4 +11,8 @@
     <color name="textSecondary">#727272</color>
     <color name="devider">#B6B6B6</color>
     <color name="textIcons">#FFFFFF</color>
+
+
+    <!---->
+
 </resources>

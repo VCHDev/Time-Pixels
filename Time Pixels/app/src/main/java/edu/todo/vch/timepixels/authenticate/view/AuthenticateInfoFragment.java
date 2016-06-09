@@ -17,9 +17,6 @@ public class AuthenticateInfoFragment extends Fragment {
     private static final String DATA = "data";
     private String data;
 
-    private TextView infoLabel;
-
-
     public AuthenticateInfoFragment(){}
 
     public static AuthenticateInfoFragment newInstance(String data){
@@ -40,12 +37,12 @@ public class AuthenticateInfoFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_authenticate_info_app, container, false);
+        return inflater.inflate(R.layout.adapter_authenticate_info_app, container, false);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        infoLabel = (TextView) view.findViewById(R.id.info_tv_label);
+        TextView infoLabel = (TextView) view.findViewById(R.id.info_tv_label);
         infoLabel.setText(data);
     }
 

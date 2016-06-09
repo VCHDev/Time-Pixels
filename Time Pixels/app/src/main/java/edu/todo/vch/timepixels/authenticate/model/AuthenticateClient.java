@@ -1,9 +1,5 @@
 package edu.todo.vch.timepixels.authenticate.model;
 
-/**
- * Created by Valentin on 30/05/16.
- */
-
 import android.net.Uri;
 import android.util.Base64;
 import android.util.Log;
@@ -60,9 +56,9 @@ public class AuthenticateClient {
 
     private String tokenSecret;
 
-    private String oauthNonce;
+    private final String oauthNonce;
 
-    private String timeStamp;
+    private final String timeStamp;
 
     private String token;
 
@@ -155,16 +151,14 @@ public class AuthenticateClient {
         return uriPath.toString();
     }
 
-    private Uri.Builder buildURIParam() throws UnsupportedEncodingException {
-        Uri.Builder uriParam = new Uri.Builder()
+    private Uri.Builder buildURIParam() {
+        return new Uri.Builder()
                 .appendQueryParameter(Oauth.CALLBACK, OauthParams.CALLBACK_ADDRESS)
                 .appendQueryParameter(Oauth.CONSUMER_KEY, CONSUMER_API_KEY)
                 .appendQueryParameter(Oauth.NONCE, oauthNonce)
                 .appendQueryParameter(Oauth.SIGNATURE_METHOD, OauthParams.SIGNATURE)
                 .appendQueryParameter(Oauth.TIMESTAMP, timeStamp)
                 .appendQueryParameter(Oauth.VERSION, OauthParams.VERSION);
-
-        return uriParam;
     }
 
     private String buildSigningRequest() throws UnsupportedEncodingException {
@@ -175,20 +169,13 @@ public class AuthenticateClient {
     }
 
     private String buildSignedURI(String uriPath, String uriParameters) throws UnsupportedEncodingException {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("GET");
-        stringBuilder.append("&");
-        stringBuilder.append(encodeData(uriPath));
-        stringBuilder.append("&");
-        stringBuilder.append(encodeData(uriParameters.replace("?", "")));
-
-        return stringBuilder.toString();
+        return "GET" + "&" + encodeData(uriPath) + "&" + encodeData(uriParameters.replace("?", ""));
     }
 
-    private String buildURIParamForRequestToken(Uri.Builder uriParam, String oauthSignature) throws UnsupportedEncodingException {
-        uriParam.appendQueryParameter(Oauth.SIGNATURE, oauthSignature);
-
-        return uriParam.build().toString();
+    private String buildURIParamForRequestToken(Uri.Builder uriParam, String oauthSignature) {
+       return uriParam.appendQueryParameter(Oauth.SIGNATURE, oauthSignature)
+               .build()
+               .toString();
     }
 
     private String encodeData(String data) throws UnsupportedEncodingException {
@@ -226,8 +213,8 @@ public class AuthenticateClient {
         SecretKeySpec secret = new SecretKeySpec(secretKey.getBytes("UTF-8"), mac.getAlgorithm());
 
         mac.init(secret);
-        byte[] digest = mac.doFinal(data.getBytes("UTF-8"));
+        byte[] encodeDataArray = mac.doFinal(data.getBytes("UTF-8"));
 
-        return new String(Base64.encodeToString(digest, Base64.NO_WRAP));
+        return Base64.encodeToString(encodeDataArray, Base64.NO_WRAP);
     }
 }

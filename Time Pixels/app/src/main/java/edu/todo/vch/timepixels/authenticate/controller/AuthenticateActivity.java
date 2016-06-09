@@ -7,7 +7,6 @@ import edu.todo.vch.timepixels.R;
 import edu.todo.vch.timepixels.authenticate.model.AuthenticateClient;
 import edu.todo.vch.timepixels.authenticate.view.AuthenticateFragment;
 
-
 /**
  * Authenticate Activity, the main controller for the application.
  */
@@ -22,8 +21,6 @@ public class AuthenticateActivity extends AppCompatActivity {
 
         if (null != findViewById(R.id.main_container ))
             startFragmentTransaction();
-
-
     }
 
     private void startFragmentTransaction(){
