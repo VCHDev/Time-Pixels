@@ -19,6 +19,16 @@
             />
 
         <LinearLayout
+            android:id="@+id/view_page_indicator"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center|bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -41,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/textIcons"
                 android:stateListAnimator="@null"
-                android:text="@string/authenticate.join.time.pixel"
+                android:text="@string/authenticate.join.capture"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -52,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/authenticate.time_pixel"
+        android:text="@string/authenticate.capture"
         android:layout_marginBottom="100dp"
         android:textColor="@color/textIcons"
         android:textSize="50sp"

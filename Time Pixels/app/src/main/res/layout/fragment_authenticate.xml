@@ -20,6 +20,16 @@
             />
 
         <LinearLayout
+            android:id="@+id/view_page_indicator"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center|bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -28,7 +38,7 @@
             <Button
                 android:id="@+id/sign_in_button"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:background="@color/colorPrimaryDark"
                 android:text="@string/authenticate.fragment.sign_in"
                 android:textColor="@color/textIcons"
@@ -39,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/textIcons"
-                android:text="@string/authenticate.join.time.pixel"
+                android:text="@string/authenticate.join.capture"
                 android:textColor="@color/colorPrimaryDark"
                 />
 
@@ -50,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/authenticate.time_pixel"
+        android:text="@string/authenticate.capture"
         android:layout_marginBottom="100dp"
         android:textColor="@color/textIcons"
         android:textSize="50sp"
