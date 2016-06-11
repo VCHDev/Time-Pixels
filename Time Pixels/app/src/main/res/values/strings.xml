@@ -19,4 +19,7 @@
     <string name="authenticate.fragment.sign_in">Sign In</string>
     <string name="authenticate.join.capture">Join Capture</string>
     <string name="authenticate.capture">Capture</string>
+
+    <!--Font names-->
+    <string name="font.name.OpenSansBold">OpenSans-ExtraBold.ttf</string>
 </resources>
