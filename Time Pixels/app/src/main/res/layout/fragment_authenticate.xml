@@ -63,7 +63,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <TextView
+    <utils.fonts.CustomFontTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -71,7 +71,7 @@
         android:layout_marginBottom="100dp"
         android:textColor="@color/textIcons"
         android:textSize="50sp"
-        android:textStyle="bold"
+        android:textStyle="italic"
         />
 
 </FrameLayout>

@@ -45,6 +45,4 @@ public class AuthenticateInfoFragment extends Fragment {
         TextView infoLabel = (TextView) view.findViewById(R.id.info_tv_label);
         infoLabel.setText(data);
     }
-
-
 }

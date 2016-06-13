@@ -12,19 +12,19 @@ public class FontCache {
 
     private static HashMap<String, Typeface> fontCache = new HashMap<>();
 
-    public static Typeface getTypeface(String fontName, Context context){
-        Typeface fontTypeface = fontCache.get(fontName);
+    public static Typeface getTypeface(String fontName, Context context) {
+        Typeface typeface =  fontCache.get(fontName);
 
-        if (fontTypeface == null) {
+        if (typeface == null) {
             try {
-                fontTypeface = Typeface.createFromAsset(context.getAssets(), fontName);
+                typeface = Typeface.createFromAsset(context.getAssets(), fontName);
             } catch (Exception e) {
-                return null;
+
             }
 
-            fontCache.put(fontName, fontTypeface);
+            fontCache.put(fontName, typeface);
         }
 
-        return fontTypeface;
+        return typeface;
     }
 }
