@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="font_style_normal">0</integer>
+    <integer name="font_style_bold">1</integer>
+    <integer name="font_style_bold_italic">2</integer>
+    <integer name="font_style_italic">3</integer>
+    <integer name="font_style_extra_bold">4</integer>
+    <integer name="font_style_extra_bold_italic">5</integer>
+    <integer name="font_style_light">6</integer>
+    <integer name="font_style_light_italic">7</integer>
+    <integer name="font_style_semibold">8</integer>
+    <integer name="font_style_semibold_italic">9</integer>
+</resources>

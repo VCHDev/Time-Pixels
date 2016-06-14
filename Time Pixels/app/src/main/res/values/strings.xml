@@ -21,5 +21,6 @@
     <string name="authenticate.capture">Capture</string>
 
     <!--Font names-->
-    <string name="font.name.OpenSansBold">OpenSans-ExtraBold.ttf</string>
+    <string name="font.name.OpenSansBold">OpenSansBold</string>
+    <string name="font.name.RobotoCondensed">RobotoCondensed</string>
 </resources>
